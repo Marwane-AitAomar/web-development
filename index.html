@@ -1,96 +1,547 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Foodie</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie — Fine Casual Dining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══ NAV ═══════════════════════════════════════════════ -->
+    <header>
+      <div class="nav-inner">
+        <div class="logo">Foodie<span>.</span></div>
+        <nav>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <button class="cart-pill">
+            <span class="cart-icon">🛒</span>
+            Cart
+            <span id="cart-count">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-<body>
+    <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div>
+          <div class="hero-eyebrow">Est. 2018 &nbsp;·&nbsp; Fresh Daily</div>
+          <h1>Crafted with<br /><em>Passion,</em><br />Delivered Hot.</h1>
+          <p class="hero-sub">
+            Restaurant-quality meals prepared by our chefs and delivered to your
+            door — in under 30 minutes, or it's free.
+          </p>
+          <div class="hero-actions">
+            <button
+              class="btn-primary"
+              onclick="
+                document
+                  .getElementById('menu')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+            >
+              Explore the Menu
+            </button>
+            <button class="btn-outline">Watch Our Story</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num">4.9★</span
+              ><span class="stat-label">Avg Rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">12k+</span
+              ><span class="stat-label">Happy Guests</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">28 min</span
+              ><span class="stat-label">Avg Delivery</span>
+            </div>
+          </div>
+        </div>
 
-<header>
-    <h1>Foodie 🍔</h1>
+        <div class="hero-feature-card">
+          <div class="hfc-img">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"
+              alt="Chef's Signature Burger"
+            />
+          </div>
+          <div class="hfc-body">
+            <div class="hfc-tag">⭐ Chef's Pick This Week</div>
+            <div class="hfc-title">The Ember Burger</div>
+            <p class="hfc-desc">
+              Dry-aged beef, aged cheddar, caramelised onions & smoked aioli on
+              a brioche bun.
+            </p>
+            <div class="hfc-row">
+              <div class="hfc-price"><sup>$</sup>14</div>
+              <button class="hfc-btn add-btn" data-name="The Ember Burger">
+                + Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">Contact</a>
+    <!-- ═══ BADGES BAR ════════════════════════════════════════ -->
+    <div class="badges-bar">
+      <div class="badges-inner">
+        <div class="badge-item">
+          <span class="badge-icon">🌿</span> Locally Sourced Ingredients
+        </div>
+        <div class="badge-item">
+          <span class="badge-icon">⚡</span> Under 30 Min Delivery
+        </div>
+        <div class="badge-item">
+          <span class="badge-icon">🔥</span> Freshly Cooked to Order
+        </div>
+        <div class="badge-item">
+          <span class="badge-icon">🎁</span> Free Delivery Over $30
+        </div>
+        <div class="badge-item">
+          <span class="badge-icon">✅</span> Hygiene Rating: 5/5
+        </div>
+      </div>
+    </div>
 
-        <span>
-            Cart: <span id="cart-count">0</span>
-        </span>
-    </nav>
-</header>
+    <!-- ═══ MENU ═══════════════════════════════════════════════ -->
+    <section id="menu">
+      <div class="menu-section">
+        <div class="menu-header">
+          <div>
+            <div class="section-label">What We Offer</div>
+            <h2 class="section-title">Our Signature Dishes</h2>
+            <p class="section-sub">
+              Seasonal menus crafted around what's freshest. Updated every week
+              by Chef Marco.
+            </p>
+          </div>
+          <div class="filter-tabs">
+            <button class="tab active">All</button>
+            <button class="tab">Mains</button>
+            <button class="tab">Starters</button>
+            <button class="tab">Desserts</button>
+          </div>
+        </div>
 
+        <div class="menu-grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"
+                alt="Smash Burger"
+              />
+              <span class="card-badge">Bestseller</span>
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Mains</div>
+              <h3 class="card-title">Classic Smash Burger</h3>
+              <p class="card-desc">
+                Double-smashed beef patty, American cheese, pickles, house sauce
+                on a toasted sesame bun.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🧀 Cheesy</span>
+                <span class="tag">🔥 Grilled</span>
+                <span class="tag">🥩 Beef</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$8</span>
+                </div>
+                <button class="add-btn" data-name="Classic Smash Burger">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
 
-<section class="hero">
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80"
+                alt="Margherita Pizza"
+              />
+              <span class="card-badge">Vegetarian</span>
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Mains</div>
+              <h3 class="card-title">Wood-Fire Margherita</h3>
+              <p class="card-desc">
+                San Marzano tomato, fresh buffalo mozzarella, basil oil, on our
+                48-hour fermented dough.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🌿 Vegetarian</span>
+                <span class="tag">🔥 Wood-fired</span>
+                <span class="tag">🇮🇹 Italian</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$12</span>
+                </div>
+                <button class="add-btn" data-name="Wood-Fire Margherita">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
 
-<h2>
-    Delicious Food Delivered
-</h2>
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80"
+                alt="Truffle Pasta"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Mains</div>
+              <h3 class="card-title">Black Truffle Tagliatelle</h3>
+              <p class="card-desc">
+                Hand-rolled egg pasta, black truffle butter, aged Parmigiano
+                Reggiano, crispy pancetta.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🍄 Truffle</span>
+                <span class="tag">🇮🇹 Pasta</span>
+                <span class="tag">🧀 Parmesan</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$10</span>
+                </div>
+                <button class="add-btn" data-name="Black Truffle Tagliatelle">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
 
-<p>
-    Fresh meals made with love
-</p>
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80"
+                alt="Summer Salad"
+              />
+              <span class="card-badge">New</span>
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Starters</div>
+              <h3 class="card-title">Heirloom Tomato Salad</h3>
+              <p class="card-desc">
+                Rainbow tomatoes, burrata, basil pistou, toasted pine nuts, aged
+                balsamic reduction.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🌿 Vegan option</span>
+                <span class="tag">🍅 Fresh</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$9</span>
+                </div>
+                <button class="add-btn" data-name="Heirloom Tomato Salad">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
 
-</section>
+          <!-- Card 5 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80"
+                alt="Lava Cake"
+              />
+              <span class="card-badge">Fan Favourite</span>
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Desserts</div>
+              <h3 class="card-title">Dark Chocolate Fondant</h3>
+              <p class="card-desc">
+                72% Valrhona chocolate, molten centre, served warm with salted
+                caramel ice cream.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🍫 Chocolate</span>
+                <span class="tag">🍦 Ice Cream</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$7</span>
+                </div>
+                <button class="add-btn" data-name="Dark Chocolate Fondant">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Card 6 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80"
+                alt="Eggs Benedict"
+              />
+              <span class="card-badge">Brunch</span>
+            </div>
+            <div class="card-body">
+              <div class="card-cat">Starters</div>
+              <h3 class="card-title">Eggs Benedict Royale</h3>
+              <p class="card-desc">
+                Poached free-range eggs, smoked Scottish salmon, sourdough
+                muffin, hollandaise sauce.
+              </p>
+              <div class="card-tags">
+                <span class="tag">🐟 Salmon</span>
+                <span class="tag">🥚 Eggs</span>
+              </div>
+              <div class="card-footer">
+                <div class="price-wrap">
+                  <span class="price-label">From</span>
+                  <span class="price">$11</span>
+                </div>
+                <button class="add-btn" data-name="Eggs Benedict Royale">
+                  <span class="plus">+</span> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /menu-grid -->
+      </div>
+    </section>
 
+    <!-- ═══ ABOUT ════════════════════════════════════════════ -->
+    <section id="about" class="about-strip">
+      <div class="about-inner">
+        <div class="about-img-col">
+          <div class="about-img-main">
+            <img
+              src="https://images.unsplash.com/photo-1600565193348-f74bd3960296?w=800&q=80"
+              alt="Chef at work"
+            />
+          </div>
+          <div class="about-img-accent">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80"
+              alt="Restaurant interior"
+            />
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Cooked by chefs,<br />not algorithms.</h2>
+          <p class="section-sub">
+            We believe great food shouldn't live only in fine dining rooms.
+          </p>
+          <p class="about-body">
+            Foodie was founded in 2018 by Chef Marco Bellini and sommelier Priya
+            Nair — two people who met at a three-Michelin-star kitchen and left
+            to build something more accessible. Every dish on our menu is
+            designed, tested, and refined in our open kitchen in the city
+            centre.<br /><br />
+            We source produce from a rotating roster of local farms within 100
+            miles, change our seasonal specials every 10 days, and never freeze
+            anything. Our packaging is 100% compostable and our delivery fleet
+            runs on electric vehicles.
+          </p>
+          <a class="about-cta">Read the full story →</a>
+        </div>
+      </div>
+    </section>
 
-<section class="menu">
+    <!-- ═══ HOW IT WORKS ══════════════════════════════════════ -->
+    <section class="steps-section">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">From kitchen to your door</h2>
+      <p class="section-sub">
+        No subscriptions. No surprises. Just great food, whenever you want it.
+      </p>
 
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-icon">🍽️</div>
+          <div class="step-num">01</div>
+          <div class="step-title">Browse the Menu</div>
+          <p class="step-desc">
+            Explore seasonal dishes updated by our chefs every week. Filter by
+            diet, cuisine, or mood.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🛒</div>
+          <div class="step-num">02</div>
+          <div class="step-title">Build Your Order</div>
+          <p class="step-desc">
+            Customise your plate, add sides, choose your portion size. No hidden
+            charges at checkout.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🔥</div>
+          <div class="step-num">03</div>
+          <div class="step-title">We Cook Fresh</div>
+          <p class="step-desc">
+            Your order goes straight to our kitchen. Prepared to order, not
+            reheated from a batch.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🛵</div>
+          <div class="step-num">04</div>
+          <div class="step-title">Fast Delivery</div>
+          <p class="step-desc">
+            Our EV riders bring it to your door. Live GPS tracking from the
+            moment it leaves the kitchen.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
+    <!-- ═══ REVIEWS ════════════════════════════════════════════ -->
+    <section class="reviews-section">
+      <div class="reviews-inner">
+        <div class="section-label">What Guests Say</div>
+        <h2 class="section-title">People love Foodie</h2>
+        <p class="section-sub">
+          Over 12,000 orders served. Here's what a few of our regulars had to
+          say.
+        </p>
 
-<img src="https://picsum.photos/300">
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "The truffle pasta is the best I've had outside of Italy. I cannot
+              believe this arrived at my door in 25 minutes and was still
+              perfectly al dente."
+            </p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">👩</div>
+              <div>
+                <div class="reviewer-name">Sophie A.</div>
+                <div class="reviewer-meta">Regular · 34 orders</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Finally, a delivery service that doesn't compromise on quality.
+              The burger arrived hot, the bun wasn't soggy, and the packaging
+              was actually compostable."
+            </p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">👨</div>
+              <div>
+                <div class="reviewer-name">James T.</div>
+                <div class="reviewer-meta">Regular · 19 orders</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "I use Foodie for client lunches now. The presentation, the
+              quality, the speed — it's genuinely impressive. My clients always
+              ask where the food is from."
+            </p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">👩‍💼</div>
+              <div>
+                <div class="reviewer-name">Leila M.</div>
+                <div class="reviewer-meta">Business Account · 61 orders</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h3>Burger</h3>
+    <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo">Foodie<span>.</span></span>
+          <p>
+            Restaurant-quality meals, local ingredients, delivered to your door.
+            Built by chefs, for food lovers.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Mains</a></li>
+            <li><a href="#">Starters</a></li>
+            <li><a href="#">Desserts</a></li>
+            <li><a href="#">Drinks</a></li>
+            <li><a href="#">Seasonal Specials</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+          <ul>
+            <li>
+              <div class="hours-row">
+                <span>Mon–Fri</span><span>11am – 10pm</span>
+              </div>
+            </li>
+            <li>
+              <div class="hours-row">
+                <span>Saturday</span><span>10am – 11pm</span>
+              </div>
+            </li>
+            <li>
+              <div class="hours-row">
+                <span>Sunday</span><span>11am – 9pm</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 42 Bloom Street, SE1</a></li>
+            <li><a href="#">📞 +44 20 7946 0523</a></li>
+            <li><a href="#">✉️ hello@foodie.co</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Foodie Ltd. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service · Allergen Info</span>
+      </div>
+    </footer>
 
-<p>$8</p>
+    <!-- ═══ TOAST ══════════════════════════════════════════════ -->
+    <div id="toast"></div>
 
-<button>
-Add to cart
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://picsum.photos/301">
-
-<h3>Pizza</h3>
-
-<p>$12</p>
-
-<button>
-Add to cart
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="https://picsum.photos/302">
-
-<h3>Pasta</h3>
-
-<p>$10</p>
-
-<button>
-Add to cart
-</button>
-
-</div>
-
-
-</section>
-
-
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
